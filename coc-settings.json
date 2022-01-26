@@ -1,0 +1,13 @@
+
+{
+	"diagnostic.enable": true,
+	"diagnostic.enableSign": true,
+	"diagnostic.errorSign": "X",
+	"diagnostic.warningSign": "⚠",
+	"diagnostic.hintSign": "!",
+	"diagnostic.virtualText":true,
+	"diagnostic.showUnused": true,
+	"diagnostic.messageDelay": 0,
+	"diagnostic.virtualTextCurrentLineOnly": false
+
+}
