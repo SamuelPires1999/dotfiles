@@ -10,11 +10,16 @@ call plug#begin()
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 
+set termguicolors     " enable true colors support
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
-colorscheme gruvbox8
+
+
 " NerdTree utils
 nnoremap <F5> :NERDTreeToggle<CR>
 " Start NERDTree and leave the cursor in it.
