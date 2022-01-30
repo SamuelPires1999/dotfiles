@@ -11,16 +11,41 @@ call plug#begin()
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'ayu-theme/ayu-vim'
+	Plug 'w0rp/ale'
+	Plug 'Mofiqul/vscode.nvim'
 call plug#end()
 
 
-set termguicolors     " enable true colors support
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+" For dark theme
+let g:vscode_style = "dark"
+" Enable transparent background.
+let g:vscode_transparency = 1
+" Enable italic comment
+let g:vscode_italic_comment = 1
+colorscheme vscode
+
+
+" ALE configs
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
+
+let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier'] } 
+let g:ale_lint_delay = 500
+let g:ale_pattern_options = {
+\ '.*node_modules.*$': {'ale_enabled': 0},
+\ '.*dist.*$': {'ale_enabled': 0},
+\ '.*-config.js$': {'ale_enabled': 0},
+\}
+let g:ale_set_signs = 1
+let g:ale_set_highlights = 1
+
+let g:ale_fix_on_save = 1
 
 
 
-" NerdTree utils
+"NerdTree utils
 nnoremap <F5> :NERDTreeToggle<CR>
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
