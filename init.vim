@@ -13,16 +13,11 @@ call plug#begin()
 	Plug 'ayu-theme/ayu-vim'
 	Plug 'w0rp/ale'
 	Plug 'Mofiqul/vscode.nvim'
+	Plug 'joshdick/onedark.vim'
 call plug#end()
 
 
-" For dark theme
-let g:vscode_style = "dark"
-" Enable transparent background.
-let g:vscode_transparency = 1
-" Enable italic comment
-let g:vscode_italic_comment = 1
-colorscheme vscode
+colorscheme onedark
 
 
 " ALE configs
@@ -50,7 +45,7 @@ nnoremap <F5> :NERDTreeToggle<CR>
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
 
-let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_theme='onedark'
 
 set wrap
 set textwidth=79
