@@ -17,7 +17,7 @@ call plug#begin()
 call plug#end()
 
 
-colorscheme onedark
+colorscheme gruvbox8
 
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -46,7 +46,7 @@ nnoremap <F5> :NERDTreeToggle<CR>
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
 
-let g:airline_theme='onedark'
+let g:airline_theme='gruvbox'
 
 set wrap
 set textwidth=79
