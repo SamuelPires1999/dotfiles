@@ -14,12 +14,17 @@ call plug#begin()
 	Plug 'w0rp/ale'
 	Plug 'Mofiqul/vscode.nvim'
 	Plug 'joshdick/onedark.vim'
+	Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 
-colorscheme gruvbox8
+" Vim-Script:
+" For dark theme
+"let g:vscode_style = "dark"
+" Enable italic comment
+"let g:vscode_italic_comment = 1
+colorscheme nightfox
 
-hi Normal guibg=NONE ctermbg=NONE
 
 " ALE configs
 
@@ -45,8 +50,12 @@ let g:ale_fix_on_save = 1
 nnoremap <F5> :NERDTreeToggle<CR>
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
 
-let g:airline_theme='gruvbox'
+
+" Always show statusline
+set laststatus=2
 
 set wrap
 set textwidth=79
