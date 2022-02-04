@@ -6,8 +6,9 @@ call plug#begin()
   Plug 'jiangmiao/auto-pairs'
 	Plug 'alvan/vim-closetag'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+	"Plug 'vim-airline/vim-airline'
+	"Plug 'vim-airline/vim-airline-themes'
+	 Plug 'itchyny/lightline.vim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'ayu-theme/ayu-vim'
@@ -23,7 +24,10 @@ call plug#end()
 "let g:vscode_style = "dark"
 " Enable italic comment
 "let g:vscode_italic_comment = 1
-colorscheme nightfox
+colorscheme nordfox
+
+
+let g:lightline = {'colorscheme': 'nordfox'}
 
 
 " ALE configs
