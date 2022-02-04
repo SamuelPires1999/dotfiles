@@ -2,7 +2,7 @@
 {
 	"diagnostic.enable": true,
 	"diagnostic.enableSign": true,
-	"diagnostic.errorSign": "❌",
+	"diagnostic.errorSign": "✗",
 	"diagnostic.warningSign": "🚧",
 	"diagnostic.hintSign": "!",
 	"diagnostic.virtualText":true,

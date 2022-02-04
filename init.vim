@@ -8,16 +8,19 @@ call plug#begin()
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"Plug 'vim-airline/vim-airline'
 	"Plug 'vim-airline/vim-airline-themes'
-	 Plug 'itchyny/lightline.vim'
+	Plug 'itchyny/lightline.vim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-	Plug 'ryanoasis/vim-devicons'
 	Plug 'ayu-theme/ayu-vim'
+	Plug 'ryanoasis/vim-devicons'
 	Plug 'w0rp/ale'
 	Plug 'Mofiqul/vscode.nvim'
 	Plug 'joshdick/onedark.vim'
 	Plug 'EdenEast/nightfox.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
+let g:mapleader = ' '
 
 " Vim-Script:
 " For dark theme
@@ -26,18 +29,18 @@ call plug#end()
 "let g:vscode_italic_comment = 1
 colorscheme nordfox
 
-
 let g:lightline = {'colorscheme': 'nordfox'}
 
 
 " ALE configs
 
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
-
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier'] } 
-let g:ale_lint_delay = 500
+let g:ale_lint_delay = 100
 let g:ale_pattern_options = {
 \ '.*node_modules.*$': {'ale_enabled': 0},
 \ '.*dist.*$': {'ale_enabled': 0},
@@ -74,6 +77,7 @@ set showmode
 set showcmd
 
 " CloseTag configs
+
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
@@ -178,6 +182,15 @@ nmap <silent> gr <Plug>(coc-references)
 
 " ------------------------- end COC configs ----------------------------
 
+" icons config 
+
+" loading the plugin
+let g:webdevicons_enable = 1
+" adding the flags to NERDTree
+let g:webdevicons_enable_nerdtree = 1
+" whether or not to show the nerdtree brackets around flags
+let g:webdevicons_conceal_nerdtree_brackets = 1
+
 
 " -------------------------- tree shitter -------------------------------
 
@@ -196,3 +209,12 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+
+"telescope configs
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
