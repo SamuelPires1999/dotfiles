@@ -2,9 +2,9 @@
 {
 	"diagnostic.enable": true,
 	"diagnostic.enableSign": true,
-	"diagnostic.errorSign": "✗",
-	"diagnostic.warningSign": "🚧",
-	"diagnostic.hintSign": "!",
+	  "diagnostic.errorSign": "🚨",
+  "diagnostic.warningSign": "⚠️ ",
+  "diagnostic.infoSign": "⚠️ ",
 	"diagnostic.virtualText":true,
 	"diagnostic.showUnused": true,
 	"diagnostic.messageDelay": 0,
@@ -36,5 +36,6 @@
     "snippet": "\ue60b  ", //  pair of curly braces
     "typeParameter": "\uf728  ", //  file presentation box
     "default": "\uf29c  " //  question mark in circle
-  }
+  },
+	"coc.preferences.formatOnSaveFiletypes": ["css", "js", "jsx", "tsx", "ts", "scss", "html"]
 }

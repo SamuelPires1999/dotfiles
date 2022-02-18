@@ -3,12 +3,13 @@ call plug#begin()
   Plug 'preservim/nerdtree'
   "Plug 'morhetz/gruvbox'
 	Plug 'lifepillar/vim-gruvbox8'
+	Plug 'yonlu/omni.vim'
   Plug 'jiangmiao/auto-pairs'
 	Plug 'alvan/vim-closetag'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	"Plug 'vim-airline/vim-airline'
-	"Plug 'vim-airline/vim-airline-themes'
-	Plug 'itchyny/lightline.vim'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	"Plug 'itchyny/lightline.vim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'ayu-theme/ayu-vim'
 	Plug 'ryanoasis/vim-devicons'
@@ -18,6 +19,9 @@ call plug#begin()
 	Plug 'EdenEast/nightfox.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'getomni/neovim', { 'branch': 'main' }
+	Plug 'LunarVim/onedarker.nvim'
 call plug#end()
 
 let g:mapleader = ' '
@@ -27,9 +31,10 @@ let g:mapleader = ' '
 "let g:vscode_style = "dark"
 " Enable italic comment
 "let g:vscode_italic_comment = 1
-colorscheme nordfox
+colorscheme	onedarker
 
-let g:lightline = {'colorscheme': 'nordfox'}
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '>'
 
 
 " ALE configs
@@ -57,8 +62,8 @@ let g:ale_fix_on_save = 1
 nnoremap <F5> :NERDTreeToggle<CR>
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
-let g:NERDTreeDirArrowExpandable = '►'
-let g:NERDTreeDirArrowCollapsible = '▼'
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 
 
 " Always show statusline
@@ -72,7 +77,7 @@ set softtabstop=2
 set number
 set ruler
 syntax on
-
+set scrolloff=8
 set showmode
 set showcmd
 
